@@ -38,12 +38,20 @@ class csv{
 }
 
 class record{
+
     public function_construct(Array $fieldNames=null,$values=null){
         $record =array_combine($fieldNames,$values);
-        foreach($record as $property=>$value)
+        foreach($record as $property=>$value);
 {
-    $this-> CreateProperty($property, $value);
+    $this-> CreateProperty($property, $value)
 }
 
+public function returnArray(){
+        $array=($array) $this;
+        public function createProperty($name='FirstName',$value='Gordon'){
+            $this->{$name}=$value;
+    }
+        }
+}
 }
 class recordFactory{}
