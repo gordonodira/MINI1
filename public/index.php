@@ -14,7 +14,38 @@ class main {
 }
 
 
-class html{}
+class html
+{
+    public static function generateTable($records)
+    {
+        $count = 0;
+        $table = "";
+        foreach ($records as $record) {
+            if ($count == 0) {
+                $table .= "<html><body><table>";
+                $array = $record->returnArray();
+                $fields = array_keys($array);
+                $table .= "<tr>";
+                foreach ($fields as $field) {
+                    $table = "<th>" . $field . "</th>";
+                    $count = 1;
+                }
+                $table .= "</tr>";
+            }
+            $array = $record->returnArray();
+            $values = array_values($array);
+            $table .= "<tr>";
+            foreach ($values as $value) {
+                $table .= "<td>" . $value . "</td>";
+            }
+            $table .= "</tr>";
+        }
+        $table .= "</table></body></html>";
+        return $table;
+    }
+}
+
+
 class csv{
     static public function getRecords ($filename){
         $file=fopen($filename,"r");
