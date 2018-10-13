@@ -13,7 +13,6 @@ class main {
     }
 }
 
-
 class html
 {
     public static function generateTable($records)
@@ -22,12 +21,16 @@ class html
         $table = "";
         foreach ($records as $record) {
             if ($count == 0) {
-                $table .= "<html><body><table>";
+                $table .= "<html><head>   <meta charset=\"utf-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
+  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
+  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script></head><body><table class ='table table-stripped'>";
                 $array = $record->returnArray();
                 $fields = array_keys($array);
                 $table .= "<tr>";
                 foreach ($fields as $field) {
-                    $table = "<th>" . $field . "</th>";
+                    $table .= "<th>" . $field . "</th>";
                     $count = 1;
                 }
                 $table .= "</tr>";
