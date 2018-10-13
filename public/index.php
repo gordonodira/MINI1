@@ -41,6 +41,7 @@ class record{
 
     public function_construct(Array $fieldNames=null,$values=null){
         $record =array_combine($fieldNames,$values);
+
         foreach($record as $property=>$value);
 {
     $this-> CreateProperty($property, $value)
@@ -51,7 +52,13 @@ public function returnArray(){
         public function createProperty($name='FirstName',$value='Gordon'){
             $this->{$name}=$value;
     }
-        }
+
 }
+
+class recordFactory{
+    public static function create(Array $fieldNames=null,Array $values=null){
+       $record=new record($fieldNames,$values);
+       return $record;
+    }
+
 }
-class recordFactory{}
