@@ -37,5 +37,9 @@ class csv{
     }
 }
 
-class record{}
+class record{
+    public function_construct(Array $fieldNames=null,$values=null){
+        $record =array_combine($fieldNames,$values);
+}
+}
 class recordFactory{}
